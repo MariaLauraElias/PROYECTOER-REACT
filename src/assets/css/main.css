@@ -7,3 +7,28 @@
 .main .h5 {
   font-size: 4rem;
 }
+
+.main .card-img-overlay {
+  top: 10%;
+}
+  
+.img-main{
+  border-radius: 0;
+  border:2px solid orange;
+}
+
+@media screen and (max-width: 700px) {
+  .main {
+    font-weight: 500;
+  }
+  .main .card-img-overlay {
+    top: 5%;
+  }  
+  .main .h5 {
+    font-size: 3rem;
+    margin-bottom: 0px;
+  }
+  .main p {
+    font-size: 18px;
+  }
+}

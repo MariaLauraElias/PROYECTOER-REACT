@@ -1,0 +1,21 @@
+.proyectos-contenedor {
+  padding-top: 60px;
+  margin-bottom: 40px;
+}
+.seccion-clara {
+  color: black;
+  background-color: white;
+}
+
+.seccion-titulo {
+  font-family: 'Architects Daughter', cursive;
+  font-size: 3rem;
+  padding: 15px 0;
+  text-align: center;
+}
+
+.seccion-descripcion {
+  font-size: 2rem;
+  color: #584e4e;
+  text-align: center;
+}

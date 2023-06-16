@@ -1,17 +1,20 @@
+import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-
-
+import NotFound from './NotFound';
+import {Route, Routes} from 'react-router-dom';
+import ContentWrapper from './ContentWrapper';
 
 function NavBar() {
   return (
+    <>
     <Navbar bg="dark" expand="lg">
       <Container fluid>
-        <Navbar.Brand href="#" className='navbar-dark'>ER A° I°</Navbar.Brand>
+        <Navbar.Brand href="/" className='navbar-dark'>ER A° I°</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" className='navbar-dark' />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -19,20 +22,33 @@ function NavBar() {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Nav.Link href="#action1">Home</Nav.Link>
-            <Nav.Link href="#action2">Link</Nav.Link>
-            <NavDropdown title="Link" id="navbarScrollingDropdown">
-              <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action4">
-                Another action
+            <Nav.Link href="/">Quienes Somos</Nav.Link>
+            <NavDropdown title="Qué Hacemos" id="navbarScrollingDropdown">
+            <NavDropdown.Item href="/QueHacemos">
+                Ver Todo
+              </NavDropdown.Item>
+              <NavDropdown.Item href="/Asadores">
+                Asadores
+              </NavDropdown.Item>
+              <NavDropdown.Item href="/Barandas">
+                Barandas
+              </NavDropdown.Item>
+              <NavDropdown.Item href="/Escaleras">
+                Escaleras
+              </NavDropdown.Item>
+              <NavDropdown.Item href="/Puertas">
+                Puertas
+              </NavDropdown.Item>
+              <NavDropdown.Item href="/Bodegas">
+                Bodegas
               </NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#action5">
-                Something else here
+              <NavDropdown.Item href="/Mesas y +">
+                Mesas y +
               </NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link href="#" disabled>
-              Link
+            <Nav.Link href="mailTo:estebanreal72@gmail.com" >
+              Contacto
             </Nav.Link>
           </Nav>
           <Form className="d-flex">
@@ -47,6 +63,11 @@ function NavBar() {
         </Navbar.Collapse>
       </Container>
     </Navbar>
+    <Routes>
+      <Route exact path='/' element={<ContentWrapper />} />
+      <Route path='*' element={<NotFound />} />
+    </Routes>
+    </>
   );
 }
 
